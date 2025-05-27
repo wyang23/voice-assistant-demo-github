@@ -4,8 +4,18 @@
     <meta charset="utf-8" />
     <title>Page Not Found</title>
     <script>
-      // Redirect to the base URL for client-side routing to handle the path
-      window.location.href = window.location.origin + "/fuzzy-disco-mrv825w";
+      // Single Page App - GitHub Pages redirect
+      (function() {
+        var segmentCount = 0;
+        var l = window.location;
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+          l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+          (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+        );
+      })();
     </script>
   </head>
   <body>

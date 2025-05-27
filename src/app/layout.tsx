@@ -29,6 +29,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${markPro.variable} ${markProHeavy.variable} ${markProMedium.variable}`}
+      suppressHydrationWarning
     >
       <head>
         <meta
@@ -39,10 +40,10 @@ export default function RootLayout({
       <body>
         <ClientProviders>{children}</ClientProviders>
         {/* Keep this script tag if needed for your project */}
-        <script 
+        <script
           async
-          src="https://cdn.gpteng.co/gptengineer.js" 
-          type="module" 
+          src="https://cdn.gpteng.co/gptengineer.js"
+          type="module"
         />
       </body>
     </html>
